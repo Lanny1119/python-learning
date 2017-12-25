@@ -1,0 +1,13 @@
+# -*- coding: utf-8 -*-
+
+def triangel(n):                              #n的作用是产生多少行数据
+    L=[1]
+    while True:
+        yield L
+        L=[L[x]+L[x+1] for x in range(len(L)-1)]
+        L.insert(0,1)                         #在第0个位置插入1
+        L.append(1)                           #在最后一个位置追加1
+        if len(L)>n:
+            break
+for x in triangel(10):                        #调用triangel函数，一般生成器都不采用next()方法调用
+    print(x)
