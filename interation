@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+def findMinAndMax(L):
+    if len(L)==0:
+        Lmax=None
+        Lmin=None
+    else:
+        Lmax=L[0]
+        Lmin=L[0]
+        for x in L:
+            if x<Lmin:
+                Lmin=x
+            if x>Lmax:
+                Lmax=x
+    return(Lmin,Lmax)
